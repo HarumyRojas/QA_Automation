@@ -1,0 +1,14 @@
+{
+  "validContact": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "subject": "Warranty Inquiry",
+    "message": "Hello, I would like to inquire about the warranty period for power tools."
+  },
+  "invalidEmailContact": {
+    "name": "Jane Doe",
+    "email": "invalid-email-address",
+    "subject": "Customer Service",
+    "message": "Testing email validation in contact form."
+  }
+}
