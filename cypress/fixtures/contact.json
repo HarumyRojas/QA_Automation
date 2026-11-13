@@ -1,0 +1,9 @@
+{
+    "contactData": {
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "email": "juan.perez@test.com",
+    "subject": "customer-service",
+    "message": "Este es un mensaje de prueba automatizada para el formulario de contacto."
+    }
+}

@@ -7,12 +7,12 @@ Cypress.Commands.add('login', (email, password) => {
 });
 
 // Comando para rellenar formulario de contacto
-Cypress.Commands.add('fillContactForm', (data, filePath = null) => {
-    cy.get('[data-test="first-name"]').type(data.firstName);
-    cy.get('[data-test="last-name"]').type(data.lastName);
-    cy.get('[data-test="email"]').type(data.email);
-    cy.get('[data-test="subject"]').select(data.subject);
-    cy.get('[data-test="message"]').type(data.message);
+Cypress.Commands.add('fillContactForm', (contact, filePath = null) => {
+    cy.get('[data-test="first-name"]').type(contact.firstName);
+    cy.get('[data-test="last-name"]').type(contact.lastName);
+    cy.get('[data-test="email"]').type(contact.email);
+    cy.get('[data-test="subject"]').select(contact.subject);
+    cy.get('[data-test="message"]').type(contact.message);
 
     // Si se le pasa un archivo como segundo parámetro, lo adjunta
     if (filePath) {
