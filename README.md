@@ -1,4 +1,4 @@
-# QA Automation · Challenge Final Toolshop
+# QA Automation · Challenge Final Toolshop (Grupo 7)
 
 Proyecto final de automatización de pruebas end-to-end (E2E) y pruebas de servicios API sobre la plataforma de práctica **Toolshop** ([Practice Software Testing](https://with-bugs.practicesoftwaretesting.com/)), desarrollado con **Cypress** y **JavaScript**.
 
@@ -19,10 +19,10 @@ Proyecto final de automatización de pruebas end-to-end (E2E) y pruebas de servi
 
 | Nombre y Apellido | Correo Electrónico |
 | :--- | :--- |
+| **Harumy Rojas Chuchon** | [harumyrojas7@gmail.com](mailto:harumyrojas7@gmail.com) |
 | **Kevin Paul Tiano** | [533kevin335@gmail.com](mailto:533kevin335@gmail.com) |
 | **Maria Fernanda Vassallo** | [fernandavassallo42@gmail.com](mailto:fernandavassallo42@gmail.com) |
 | **Mayra Taborda** | [tabordamayra02@gmail.com](mailto:tabordamayra02@gmail.com) |
-| **Harumy Rojas Chuchon** | [harumyrojas7@gmail.com](mailto:harumyrojas7@gmail.com) |
 
 ---
 
