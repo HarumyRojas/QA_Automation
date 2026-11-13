@@ -1,7 +1,7 @@
 {
   "name": "proyecto_automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repositorio de prácticas y proyectos de QA Automation utilizando Cypress y JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
@@ -14,6 +14,14 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^16.2.1"
-  }
+    "cypress": "^16.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarumyRojas/QA_Automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HarumyRojas/QA_Automation/issues"
+  },
+  "homepage": "https://github.com/HarumyRojas/QA_Automation#readme"
 }
