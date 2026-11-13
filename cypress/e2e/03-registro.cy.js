@@ -37,7 +37,6 @@ describe('Módulo de Registro de Usuarios', () => {
         const dynamicEmail = `user_${Date.now()}@test.com`;
         cy.visit('/auth/register');
         
-        // Ingresar solo 1 carácter en el nombre
         cy.get('[data-test="first-name"]').type('A'); 
         cy.get('[data-test="last-name"]').type('Pérez');
         cy.get('[data-test="dob"]').type('1990-05-15');

@@ -1,4 +1,4 @@
-describe('Módulo de Formulario de Contacto (TC-CON-001 al TC-CON-005)', () => {
+describe('Módulo de Formulario de Contacto (TC-CON-001 al TC-CON-006)', () => {
   beforeEach(() => {
     cy.fixture('contact').as('contact');
   });
@@ -11,9 +11,16 @@ describe('Módulo de Formulario de Contacto (TC-CON-001 al TC-CON-005)', () => {
     cy.get('.alert-success').should('contain.text', 'Thanks for your message');
   });
 
-  it('TC-CON-002: Envío de formulario adjuntando archivos permitidos (PDF/JPG)', function() {
+  it('TC-CON-002-a: Envío de formulario adjuntando archivo PDF permitido', function() {
     cy.visit('/contact');
     cy.fillContactForm(this.contact.contactData, 'cypress/fixtures/challenge.pdf');
+    cy.get('.alert-success').should('contain.text', 'Thanks for your message');
+  });
+
+  // TC-CON-002-b: Envío con imagen JPG permitida (< 500KB)
+  it('TC-CON-002-b: Envío de formulario adjuntando imagen JPG permitida', function() {
+    cy.visit('/contact');
+    cy.fillContactForm(this.contact.contactData, 'cypress/fixtures/imagen.jpg');
     cy.get('.alert-success').should('contain.text', 'Thanks for your message');
   });
 
@@ -35,16 +42,12 @@ describe('Módulo de Formulario de Contacto (TC-CON-001 al TC-CON-005)', () => {
       .and('contain.text', 'The file extension is incorrect, we only accept txt files.');
   });
 
-  // TC-CON-004: Archivo en el límite de tamaño permitido (Probando con example.txt)
   it('TC-CON-004: Validar comportamiento en el límite de tamaño de archivo permitido', function() {
     cy.visit('/contact');
-
     cy.fillContactForm(this.contact.contactData, 'cypress/fixtures/example.txt');
-
     cy.get('body').should('be.visible');
   });
 
- // TC-CON-005: Intento de envío de formulario de contacto con email inválido (Debe dar FAIL si la app lo deja pasar)
   it('TC-CON-005: Intento de envío de formulario de contacto con email inválido', function() {
     cy.visit('/contact');
     
@@ -58,5 +61,13 @@ describe('Módulo de Formulario de Contacto (TC-CON-001 al TC-CON-005)', () => {
     cy.get('.alert-success').should('not.exist');
     cy.get('[data-test="email-error"], .help-block, .alert-danger').should('be.visible');
     cy.url().should('include', '/contact');
+  });
+  
+  it('TC-CON-006: Intento de enviar formulario con example2.txt (Supera el límite de 500KB)', function() {
+    cy.visit('/contact');
+    cy.fillContactForm(this.contact.contactData, 'cypress/fixtures/example2.txt');
+    cy.get('.alert-success').should('not.exist'); 
+    cy.get('[data-test="attachment-error"], .help-block, .alert-danger')
+      .should('be.visible'); 
   });
 });
